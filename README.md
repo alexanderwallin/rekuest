@@ -2,6 +2,8 @@
 
 A functional style HTTP request composer, heavily inspired by the [kewler](https://github.com/adriantoine/kewler) color manipulation module.
 
+**Disclaimer!** This is an untested proof of concept with the main aim to get me learning functional programming. It "should work" though! ;)
+
 `rekuest` lets you compose HTTP request endlessly until you invoke a `rekuest` object without any arguments.
 
 ```js
