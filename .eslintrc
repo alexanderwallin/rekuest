@@ -1,0 +1,33 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "rules": {
+    "radix": 0,
+    "global-require": 0,
+    "no-unused-vars": [2, {
+      "varsIgnorePattern": "[iI]gnored",
+      "argsIgnorePattern": "^_"
+    }],
+    "brace-style": [2, "stroustrup", { "allowSingleLine": false }],
+    "new-cap": [2, {
+      "capIsNewExceptions": [
+        "Array",
+        "Boolean",
+        "Date",
+        "Error",
+        "Function",
+        "Number",
+        "Object",
+        "RegExp",
+        "String",
+        "Symbol",
+        "Map",
+        "List"
+      ]
+    }],
+
+    "import/no-unresolved": 0,
+
+    "react/prop-types": 0
+  }
+}
