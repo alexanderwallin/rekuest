@@ -1,4 +1,4 @@
-import { rekuest, method, headers, url, uri, params, query, body } from './src/index';
+import { rekuest, method, headers, url, uri, params, query, body } from '../src';
 
 const api = rekuest(
   url('http://api.examples.com'),
@@ -13,11 +13,15 @@ const del = api(method('get'));
 const resource = name => {
   return {
     list: () => get(uri(`/${name}`))(),
+
     get: id => get(uri(`/${name}/:id`), params({ id }))(),
+
     create: data => post(uri(`/${name}`), body(data))(),
-    update: (id, data) => put(uri(`/${name}/:id`), param({ id }), body(data))(),
-    remove: id => del(uri(`/${name}/:id`), params({ id }))()
-  },
+
+    update: (id, data) => put(uri(`/${name}/:id`), params({ id }), body(data))(),
+
+    remove: id => del(uri(`/${name}/:id`), params({ id }))(),
+  };
 };
 
 const articles = resource('articles');

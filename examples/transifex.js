@@ -1,19 +1,13 @@
-import { rekuest, method, headers, url, uri, params, query, body } from './src/index';
+import { rekuest, method, headers, url, uri, params, query, body } from '../src';
 
-const tfxRequest = rekuest(
-  url('https://www.transifex.com/api/2')
-);
+const tfxRequest = rekuest(url('https://www.transifex.com/api/2'));
 
 /**
  * Projecs
  */
-const projectRequest = tfxRequest(
-  uri('/project/:project'),
-);
+const projectRequest = tfxRequest(uri('/project/:project'));
 
-const projectsRequest = tfxRequest(
-  uri('/projects')
-);
+const projectsRequest = tfxRequest(uri('/projects'));
 
 export const getProjects = () => tfxRequest(uri('/projects'))();
 
@@ -35,9 +29,7 @@ export const deleteProject = project => projectRequest(
 /**
  * Resources
  */
-const resourceRequest = projectRequest(
-  uri('/resource/:resource'),
-);
+const resourceRequest = projectRequest(uri('/resource/:resource'));
 
 export const getResources = project => projectRequest(uri('/resources'), params({ project }))();
 
@@ -71,7 +63,7 @@ export const updateResourceContent = (project, resource, content) => contentRequ
  * Translations
  */
 const translationRequest = resourceRequest(uri('/translation/:langCode'));
-f
+
 export const getTranslations = (project, resource, langCode) => translationRequest(
   params({ project, resource, langCode })
 )();
