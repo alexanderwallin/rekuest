@@ -28,9 +28,9 @@ const rekuest = (req, ...alts) => {
     return rekuest(alteration(req));
   }
 
-  return (...alts) => {
-    if (alts.length) {
-      const alteration = flow(alts);
+  return (...nextAlts) => {
+    if (nextAlts.length) {
+      const alteration = flow(nextAlts);
       return rekuest(alteration(req));
     }
 
@@ -47,7 +47,7 @@ export const headers = h => req => ({ ...req, headers: { ...req.headers, ...h } 
 
 export const url = u => req => ({ ...req, url: u });
 
-export const uri = u => req => ({ ...req, uri: `${req.uri}${u}`});
+export const uri = u => req => ({ ...req, uri: `${req.uri}${u}` });
 
 export const params = p => req => ({ ...req, params: { ...params, ...p } });
 
