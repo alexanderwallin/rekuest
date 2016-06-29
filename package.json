@@ -1,7 +1,7 @@
 {
   "name": "rekuest",
   "version": "0.1.0",
-  "description": "",
+  "description": "A functional style HTTP request composer",
   "main": "dist/index.js",
   "files": [
     "dist"
