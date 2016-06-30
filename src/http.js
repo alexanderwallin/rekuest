@@ -15,11 +15,24 @@ const buildUrl = req => {
     .reduce((parsedUrl, param) => parsedUrl.replace(`:${param}`, req.params[param]), url);
 };
 
-export const send = req =>
-  fetch(buildUrl(req), {
+export const send = req => {
+  const { debug, ...request } = req;
+
+  const url = buildUrl(request);
+  const options = {
     method: req.method,
     headers: req.headers,
     body: req.body,
     search: req.query,
-  })
-  .then(response => response.json());
+  };
+
+  if (debug) {
+    console.log('Performing request:');
+    console.log(req);
+    console.log(url);
+    console.log(options);
+  }
+
+  return fetch(url, options)
+    .then(response => response.json());
+};

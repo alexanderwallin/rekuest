@@ -11,6 +11,7 @@ const defaults = {
   params: {},
   query: {},
   body: {},
+  debug: false,
 };
 
 const rekuest = (req, ...alts) => {
@@ -54,3 +55,5 @@ export const params = p => req => ({ ...req, params: { ...params, ...p } });
 export const query = q => req => ({ ...req, query: { ...req.query, ...q } });
 
 export const body = b => req => ({ ...req, body: { ...body, ...b } });
+
+export const debug = d => req => ({ ...req, debug: d });
