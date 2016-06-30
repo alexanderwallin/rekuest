@@ -51,6 +51,6 @@ export const uri = u => req => ({ ...req, uri: `${req.uri}${u}` });
 
 export const params = p => req => ({ ...req, params: { ...params, ...p } });
 
-export const query = q => req => ({ ...req, query: { ...query, ...q } });
+export const query = q => req => ({ ...req, query: { ...req.query, ...q } });
 
 export const body = b => req => ({ ...req, body: { ...body, ...b } });
