@@ -10,7 +10,7 @@ const getUrlQuery = query => {
 };
 
 const buildUrl = req => {
-  const url = `${req.url}${req.uri}${getUrlQuery(req.query)}`;
+  const url = req.url + req.uri + getUrlQuery(req.query);
   return Object.keys(req.params)
     .reduce((parsedUrl, param) => parsedUrl.replace(`:${param}`, req.params[param]), url);
 };
