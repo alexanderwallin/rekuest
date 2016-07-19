@@ -3,7 +3,7 @@ import qs from 'qs';
 
 const getUrlQuery = query => {
   if (Object.keys(query).length > 0) {
-    return `?${qs.stringify(query)}`;
+    return '?' + qs.stringify(query, { encode: false });
   }
 
   return '';
