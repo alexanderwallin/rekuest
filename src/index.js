@@ -50,10 +50,10 @@ export const url = u => req => ({ ...req, url: u });
 
 export const uri = u => req => ({ ...req, uri: `${req.uri}${u}` });
 
-export const params = p => req => ({ ...req, params: { ...params, ...p } });
+export const params = p => req => ({ ...req, params: { ...req.params, ...p } });
 
 export const query = q => req => ({ ...req, query: { ...req.query, ...q } });
 
-export const body = b => req => ({ ...req, body: { ...body, ...b } });
+export const body = b => req => ({ ...req, body: { ...req.body, ...b } });
 
 export const debug = d => req => ({ ...req, debug: d });
