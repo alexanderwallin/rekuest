@@ -33,6 +33,5 @@ export const send = req => {
     console.log(options);
   }
 
-  return fetch(url, options)
-    .then(response => response.json());
+  return fetch(url, options);
 };
