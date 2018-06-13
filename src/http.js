@@ -15,8 +15,8 @@ const buildUrl = req => {
     .reduce((parsedUrl, param) => parsedUrl.replace(`:${param}`, req.params[param]), url);
 };
 
-export const send = req => {
-  const { debug, ...request } = req;
+export const send = async req => {
+  const { debug, handleResponse, ...request } = req;
 
   const url = buildUrl(request);
   const options = {
@@ -33,5 +33,6 @@ export const send = req => {
     console.log(options);
   }
 
-  return fetch(url, options);
+  const response = await fetch(url, options);
+  return handleResponse(response);
 };

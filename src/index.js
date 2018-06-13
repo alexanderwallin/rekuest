@@ -12,6 +12,7 @@ const defaults = {
   query: {},
   body: null,
   debug: false,
+  handleResponse: x => x,
 };
 
 const rekuest = (req, ...alts) => {
@@ -57,3 +58,5 @@ export const query = q => req => ({ ...req, query: { ...req.query, ...q } });
 export const body = b => req => ({ ...req, body: { ...(req.body || {}), ...b } });
 
 export const debug = d => req => ({ ...req, debug: d });
+
+export const handleResponse = h => req => ({ ...req, handleResponse: h });
