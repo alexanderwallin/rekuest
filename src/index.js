@@ -10,7 +10,7 @@ const defaults = {
   uri: '',
   params: {},
   query: {},
-  body: {},
+  body: null,
   debug: false,
 };
 
@@ -54,6 +54,6 @@ export const params = p => req => ({ ...req, params: { ...req.params, ...p } });
 
 export const query = q => req => ({ ...req, query: { ...req.query, ...q } });
 
-export const body = b => req => ({ ...req, body: { ...req.body, ...b } });
+export const body = b => req => ({ ...req, body: { ...(req.body || {}), ...b } });
 
 export const debug = d => req => ({ ...req, debug: d });
