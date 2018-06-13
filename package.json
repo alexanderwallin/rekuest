@@ -4,7 +4,8 @@
   "description": "A functional style HTTP request composer",
   "main": "dist/index.js",
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "lint": "eslint src",
