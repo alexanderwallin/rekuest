@@ -15,6 +15,7 @@
   "author": "Alexander Wallin <office@alexanderwallin.com> (http://alexanderwallin.com)",
   "license": "ISC",
   "dependencies": {
+    "@babel/polyfill": "^7.8.7",
     "isomorphic-fetch": "^2.2.1",
     "lodash.flow": "^3.3.0",
     "lodash.isfunction": "^3.0.8",

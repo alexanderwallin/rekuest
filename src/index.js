@@ -1,3 +1,4 @@
+import '@babel/polyfill';
 import flow from 'lodash.flow';
 import isFunction from 'lodash.isfunction';
 
